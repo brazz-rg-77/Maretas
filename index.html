@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maretas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="logoEscola.png" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .school-logo {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .school-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .link-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .footer-link {
+            position: relative;
+        }
+        
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Cabeçalho -->
+ <header class="bg-white shadow-md py-4 px-6">
+  <div class="container mx-auto flex justify-between items-center">
+    
+    <!-- Logo à esquerda -->
+    <div>
+      <img src="logoEscola.png" alt="Logo da Escola" class="school-logo">
+    </div>
+
+    <!-- Nome da escola centralizado -->
+    <div class="text-center flex-1">
+      <h1 class="text-lg md:text-2xl font-bold text-gray-800">
+        Núcleo Municipal de Educação do Campo Dr. Paulo Pinheiro de Viveiros
+      </h1>
+      <p class="text-xs md:text-sm text-gray-600">
+        Projeto JEPP da turma do 9º ano
+      </p>
+    </div>
+
+    <!-- Ícones de redes sociais à direita -->
+    <div class="flex space-x-4">
+      <a href="https://www.instagram.com/escoladrpaulo/" class="social-icon text-black-600 hover:text-black-700" aria-label="Instagram da escola">
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+      <a href="https://www.youtube.com/@professorjordanmendes/featured" class="social-icon text-black-600 hover:text-black-700" aria-label="Canal do YouTube da escola">
+        <i class="fab fa-youtube text-2xl"></i>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+    <!-- Corpo principal -->
+    <main class="flex-grow container mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Pontos Turísticos de Maretas</h2>
+            <p class="text-gray-600 max-w-1x2 mx-auto">Selecione uma das opções abaixo para conhecer alguns locais relevantes para nossa comunidade</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Link 1 -->
+            <a href="ponto1.html" class="link-card rounded-xl p-6 shadow-md border border-gray-100 flex flex-col items-center text-center">
+                <div class="rounded-full mb-4">
+                    <img src="Escola.jpeg" class="w-54 h-auto rounded-md">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Dr. Paulo Pinheiro</h3>
+                <p class="text-gray-600 text-sm">Clique para saber mais</p>
+            </a>
+            
+            <!-- Link 2 -->
+            <a href="ponto2.html" class="link-card rounded-xl p-6 shadow-md border border-gray-100 flex flex-col items-center text-center">
+                <div class="rounded-full mb-4">
+                     <img src="Igreja2.jpeg" class="w-54 h-auto rounded-md">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Igreja Católica</h3>
+                <p class="text-gray-600 text-sm">Clique para saber mais</p>
+            </a>
+            
+            <!-- Link 3 -->
+            <a href="ponto3.html" class="link-card rounded-xl p-6 shadow-md border border-gray-100 flex flex-col items-center text-center">
+                <div class="rounded-full mb-4">
+                    <img src="Farinha.jpeg" class="w-54 h-auto rounded-md">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Casa de Farinha</h3>
+                <p class="text-gray-600 text-sm">Clique para saber mais</p>
+            </a>
+            
+            <!-- Link 4 -->
+             
+            
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-8 px-6">
+        <div class="container mx-auto">
+            <div class="text-center flex-1">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Sobre o Projeto</h3>
+                    <p class="text-gray-300 text-sm mb-4">O JEPP JOVENS EMPREENDEDORES PRIMEIROS PASSOS é um PROJETO DE EMPREENDEDORISMO para o desenvolvimento de habilidades e competências empreendedoras, em alunos do Ensino Fundamental. Composto por 9 cursos do 1º ao 9º ano.</p>
+                    <h3 class="text-lg font-semibold mb-4">Veja mais no link:</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://sebrae.com.br/sites/PortalSebrae/sebraeaz/educacao-empreendedora-no-ensino-fundamental,0c54be061f736410VgnVCM2000003c74010aRCRD" class="footer-link text-gray-300 hover:text-white text-sm">Link para o SEBRAE</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+                <p>© 2025 N. M. de E. do C. Dr. Paulo Pinheiro de Viveiros.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Adicionando interação aos links
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const linkText = this.querySelector('h3').textContent;
+                alert(`Você clicou no link: ${linkText}\n(Esta é uma demonstração - em um site real você seria redirecionado)`);
+            });
+        });
+    </script>
+</body>
+</html>
