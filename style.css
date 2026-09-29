@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Reset recomendado para evitar que padding altere a largura total */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: rgba(31, 48, 48, 0.4);
+    color: #f1eee8;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(31, 48, 48, 0.4);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    text-align: center;
+}
+
+.content h1{
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 5rem);
+    color: #f1eee8;
+}
+
+.hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    max-width: 750px;
+    margin: 1.25rem auto 0;
+    font-size: 1.07rem;
+    color: #f1eee8;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+button {
+    padding: 0.8rem 1.4rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f1eee8;
+    font-weight: 700;
+    text-decoration: none;
+}
+.btn {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: #f1eee8;
+  font-weight: 700;
+}
+/* Remove o fundo branco interno do player no Chrome, Edge e Safari */
+audio::-webkit-media-controls-panel {
+  background-color: transparent;
+}
+
+/* Deixa os ícones (play, volume, etc.) claros para combinar com o fundo escuro */
+audio::-webkit-media-controls-enclosure {
+  filter: invert(0.9);
+}
+.btn-principal {
+    background-color: #f1eee8;
+    color: #bb9877;
+    box-shadow: 0 16px 30px rgba(244, 201, 93, 0.26);
+}
+.btn:hover, button:hover {
+    transform: translateY(-2px);
+}
+button:active, .btn:active {
+    transform: translateY(1px);
+}
+
+.background-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+}
+
+.cronograma{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(31, 48, 48, 0.4), rgba(31, 48, 48, 0.5)), url('media/img_background.jpg' ) no-repeat center center/cover ;
+  span{
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 5rem);
+    color: #bb9877;
+    text-decoration: underline;
+    text-decoration-color: #bb9877;
+  }
+}
+.tituloSessao{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 5rem);
+  text-align: top;
+  text-decoration: underline;
+  text-decoration-color: #bb9877;
+}
+.containerCronograma{
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+
+  h2{
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    background-color: #f1eee8;
+    color: #bb9877;
+    width: 60%;
+    border-radius: 30px;
+  }
+  h3{
+    margin-top: 1rem;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #bb9877;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    margin-bottom: 0.5rem;
+  }
+  p{
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.8rem, 1rem, 1.2rem);
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+.esquerdaCronograma{
+  width: 45%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  background-color: rgba(31, 48, 48, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 16px 30px rgba(253, 232, 177, 0.26);
+  margin: 1rem;
+}
+.botoes{
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.direitaCronograma{
+  width: 45%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  background-color: rgba(31, 48, 48, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 16px 30px rgba(253, 232, 177, 0.26);
+  margin: 1rem;
+}
+
+.player{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%; /* Ocupa 100% da largura do card pai */
+  max-width: 100%; 
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.player iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Mantém a proporção correta do vídeo */
+  border: 0;
+  border-radius: 10px; /* Opcional: para combinar com os cantos arredondados do seu design */
+}
+.notas{
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(31, 48, 48, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 16px 30px rgba(253, 232, 177, 0.26);
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/* --- ESTRUTURA DO SLIDER --- */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Oculta os dias que não estão na tela */
+  transition: height 0.4s ease-in-out;
+}
+
+.slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out; /* Transição suave */
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- ESTILO DAS SETAS (DESKTOP) --- */
+.controles-slider {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  pointer-events: none; /* Permite clicar no conteúdo do centro */
+  z-index: 10;
+}
+
+.nav-btn {
+  pointer-events: auto; /* Reativa o clique nas setas */
+  background-color: #f1eee8;
+  color: #bb9877;
+  border: 2px solid #bb9877;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn:hover:not(:disabled) {
+  background-color: #bb9877;
+  color: #f1eee8;
+  transform: scale(1.1);
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: #888;
+  color: #888;
+}
+
+/* --- ESTILOS PADRÃO (DESKTOP) --- */
+
+.sobre {
+  width: 100%;
+  height: 60vh;
+}
+
+.infoSobre {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  color: #f1eee8;
+  background:linear-gradient(rgba(31, 48, 48, 0.4), rgba(31, 48, 48, 0.5)),
+  linear-gradient(
+    160deg,
+    #838a8f 0%,
+    #9b9690 30%,
+    #b6a789 60%,
+    #c9ac7e 100%
+  );
+  overflow: hidden;
+}
+.infoSobre::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('media/noise.jpg'); /* Atualize o caminho da imagem */
+  background-repeat: repeat;
+  opacity: 0.05; /* Ajuste aqui a intensidade do ruído (ex: 0.05 a 0.3) */
+  pointer-events: none; /* Garante que os botões e links continuem clicáveis */
+  z-index: 1;
+}
+
+.cardEsquerda {
+  width: 25%;
+  height: 95%; /* Ajustado de 95% para auto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  background-color: rgba(31, 48, 48, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 16px 30px rgba(253, 232, 177, 0.26);
+  margin: 1rem;
+
+  h2{
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #bb9877;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+  }
+  p{
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.8rem, 1rem, 1.2rem);
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+  h3{
+    margin-top: 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    margin-bottom: 0.5rem;
+  }
+  hr{
+    width: 100%;
+    border: px solid white;
+    margin: 0.5rem auto;
+  }
+  a{
+    margin-top: 2rem;
+  }
+}
+
+.links {
+  width: 50%;
+  height: auto; /* Ajustado de 95% para auto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8rem;
+  border-radius: 10px;
+  margin: 1rem;
+      
+  h2{
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #bb9877;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+  }
+}
+
+.professores {
+  width: 100%;
+  height: 70%; /* Ajustado de 75% para auto */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #f1eee8;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  justify-content: center;
+}
+
+.professor {
+  width: 40%;
+  height: 100%; /* Ajustado de 100% para auto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  background-color: rgba(31, 48, 48, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 16px 30px rgba(253, 232, 177, 0.26);
+  margin: 1rem;
+
+  img{
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  h2{
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #bb9877;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+  }
+  p{
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.8rem, 1rem, 1.2rem);
+    margin-bottom: 1rem;
+    padding: 0.1rem;
+  }
+  a{
+    text-decoration: none;
+    color: #f1eee8;
+  }
+}
+i.fa-instagram {
+  font-size: clamp(2rem, 3rem, 5rem);
+  color: #f1eee8;
+  margin-top: 1rem;
+}
+
+.redesSociais {
+  width: 100%;
+  height: 25%; /* Ajustado de 25% para auto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+footer{
+  width: 100%;
+  height: auto; /* Permite que o footer ajuste sua altura dinamicamente */
+  min-height: 50px; /* Garante uma altura mínima adequada */
+  background-color: black;
+  font-family: 'Ubuntu Mono', monospace; 
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ffffff; /* Garante visibilidade do texto em fundo preto */
+}
+
+/* --- RESPONSIVIDADE (DISPOSITIVOS MÓVEIS) --- */
+
+@media (max-width: 768px) {
+  .cronograma{
+    height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+    min-height: 100vh; /* Garante que a altura mínima seja de 100vh */
+  }
+  .containerCronograma{
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+  }
+  .esquerdaCronograma,
+  .direitaCronograma{
+    width: 90%; /* Ocupa a maior parte da largura da tela */
+    height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+    margin: 1rem 0; /* Espaçamento entre os elementos empilhados */
+  }
+  .slider-wrapper,
+  .slider-viewport,
+  .slider-track {
+    height: auto;
+  }
+  .player{
+    width: 90%; /* Ocupa a maior parte da largura da tela */
+    height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+    margin: 1rem 0; /* Espaçamento entre os elementos empilhados */
+  }
+  video {
+    width: 100px; /* Ocupa toda a largura disponível */
+    height: auto; /* Mantém a proporção do vídeo */
+  }
+  .botoes{
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    width: auto; /* Ocupa a largura total da tela */
+    height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+  }
+  .sobre {
+    height: auto !important; /* Liberta a altura travada para acompanhar os cards empilhados */
+    min-height: 65vh;
+  }
+  /* Muda a direção das 3 colunas principais para ficarem empilhadas */
+  .infoSobre {
+    flex-direction: column;
+  }
+
+  /* Faz as caixas principais ocuparem a largura total da tela móvel */
+  .cardEsquerda,
+  .links {
+    width: auto; /* Ocupa 100% do espaço respeitando o margin: 1rem */
+    margin: 1rem;
+  }
+
+  /* Empilha os cards dos professores no celular (um abaixo do outro) */
+  .professores {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .professor {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  /* No celular, as setas vão para a parte inferior */
+  .controles-slider {
+    position: relative;
+    top: auto;
+    transform: none;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    padding: 0;
+  }
+}
+
+  /* #region Efeito de Máquina de Escrever */
+
+.typewriter {
+  --caret: currentcolor;
+  color: #bb9877;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 16.0s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+/* Digita e apaga cada palavra, uma após a outra */
+@keyframes typing {
+  0.0000%   { content: ""; }
+  0.9174%   { content: "e"; }
+  1.8349%   { content: "es"; }
+  2.7523%   { content: "est"; }
+  3.6697%   { content: "estu"; }
+  4.5872%   { content: "estud"; }
+  5.5046%   { content: "estuda"; }
+  6.4220%   { content: "estudan"; }
+  7.3394%   { content: "estudant"; }
+  8.2569%   { content: "estudante"; }
+  9.1743%, 23.8532% { content: "estudantes"; } /* pausa */
+  24.7706%  { content: "estudant"; }
+  25.6881%  { content: "estudan"; }
+  26.6055%  { content: "estuda"; }
+  27.5229%  { content: "estud"; }
+  28.4404%  { content: "estu"; }
+  29.3578%  { content: "est"; }
+  30.2752%  { content: "es"; }
+  31.1927%  { content: "e"; }
+  32.1101%, 33.0275% { content: ""; } /* intervalo entre palavras */
+
+  33.9450%  { content: "e"; }
+  34.8624%  { content: "em"; }
+  35.7798%  { content: "emp"; }
+  36.6972%  { content: "empr"; }
+  37.6147%  { content: "empre"; }
+  38.5321%  { content: "empree"; }
+  39.4495%  { content: "empreen"; }
+  40.3670%  { content: "empreend"; }
+  41.2844%  { content: "empreende"; }
+  42.2018%  { content: "empreended"; }
+  43.1193%  { content: "empreendedo"; }
+  44.0367%  { content: "empreendedor"; }
+  44.9541%, 59.6330% { content: "empreendedores"; } /* pausa */
+  60.5505%  { content: "empreendedor"; }
+  61.4679%  { content: "empreendedo"; }
+  62.3853%  { content: "empreended"; }
+  63.3028%  { content: "empreende"; }
+  64.2202%  { content: "empreend"; }
+  65.1376%  { content: "empreen"; }
+  66.0550%  { content: "empree"; }
+  66.9725%  { content: "empre"; }
+  67.8899%  { content: "empr"; }
+  68.8073%  { content: "emp"; }
+  69.7248%  { content: "em"; }
+  70.6422%  { content: "e"; }
+  71.5596%, 72.4771% { content: ""; } /* intervalo entre palavras */
+
+  73.3945%  { content: "cr"; }
+  74.3119%  { content: "cri"; }
+  75.2294%  { content: "cris"; }
+  76.1468%  { content: "crist"; }
+  77.0642%  { content: "cristã"; }
+  77.9817%  { content: "cristão"; }
+  78.8991%, 93.5780% { content: "cristãos"; } /* pausa */
+  94.4954%  { content: "cristão"; }
+  95.4128%  { content: "cristã"; }
+  96.3303%  { content: "crist"; }
+  97.2477%  { content: "cris"; }
+  98.1651%  { content: "cri"; }
+  99.0826%  { content: "cr"; }
+  100.0000% { content: ""; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter::after {
+    animation: none;
+  }
+
+  @keyframes sequence-popup {
+    0%, 100% { content: "Estudantes"; }
+    33%      { content: "Empreendedores"; }
+    66%      { content: "Cristãos"; }
+  }
+
+  .typewriter::before {
+    content: "Estudantes";
+    animation: sequence-popup 12s linear infinite;
+  }
+}
+
+/* #endregion */
